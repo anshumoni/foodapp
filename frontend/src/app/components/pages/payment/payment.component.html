@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="details">
+        <app-title title="Order Summary"></app-title>
+         <div>
+            <span>Order Name:{{order.name}}</span>
+         </div>
+         <div>
+            <span>Order Address:{{order.address}}</span>
+         </div>
+        <div class="map-container">
+          <app-title title="Choose Address from map" fontSize="1.2"></app-title>
+          <map></map>
+        </div>
+    </div>
+    <cart-items [orders]="order"></cart-items>
+    <div class="button-container">
+      <div class="button">
+      </div>
+
+    </div>
+</div>

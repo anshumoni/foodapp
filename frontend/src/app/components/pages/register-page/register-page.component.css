@@ -1,0 +1,15 @@
+.container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:2.5rem
+}
+.details{
+    width:30rem
+}
+.login{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:1.5rem
+}
