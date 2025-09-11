@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="details">
+        <app-title title="Order Details"></app-title>
+        <form [formGroup]="checkoutform">
+          <input-text
+          [mycontrol]="fc['username']"
+           label="Name"
+           type="text"
+           >
+          </input-text>        
+          <input-text [mycontrol]="fc['useraddress']" label="Address" type="text"></input-text>
+        </form>
+        <div class="map-container">
+          <app-title title="Choose Address from map" fontSize="1.2"></app-title>
+         <map (setLatLng)="setLatLngMap($event)"></map>
+
+        </div>
+    </div>
+    <cart-items [orders]="order"></cart-items>
+    <div class="button-container">
+      <div class="button">
+        <button (click)="createOrder()">Go to Payment Page</button>
+      </div>
+
+    </div>
+</div>

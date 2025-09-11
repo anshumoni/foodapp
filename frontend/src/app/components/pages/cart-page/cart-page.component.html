@@ -1,0 +1,36 @@
+<app-title title="Cart Page" margin="1rem 0 1rem 0" fontSize="1rem"></app-title>
+<app-not-found [visible]="!isCarthaveitem" notfoundmessage="Cart Is Empty" resetMessgae="Go To List page"></app-not-found>
+<div class="container" *ngIf="cart && cart.item.length">
+ <ul>
+    <li *ngFor="let crt of cart?.item">
+        <div>
+            <img [src]="crt.food.imageUrl" [alt]="crt.food.name"/>
+        </div>
+        <div>
+            <a routerLink="/food/{{crt.food.id}}">
+                {{crt.food.name}}
+            </a>
+        </div>
+        <div>
+            <select #changeqty [value]="crt.quantity" (change)="changeQty(crt,changeqty.value)">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+         </div>
+         <div>
+            {{crt.price | currency}}
+         </div>
+         <div>
+            <button (click)="removeItem(crt)" class="remove">Remove Item</button>
+         </div>
+    </li>
+ </ul>
+ <div class="checkout">
+    <div class="food-count">{{cart.totalcount}}</div>
+    <div class="food-price">{{cart.totalprice}}</div>
+    <a routerLink="/checkout">Proceed To Checkout</a>
+ </div>
+ 
+</div>

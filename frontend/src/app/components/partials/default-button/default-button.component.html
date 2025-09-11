@@ -1,0 +1,12 @@
+<div class="container">
+<button [type]="type"
+ [ngStyle]="{
+ 'background-color':bgColor,
+ 'color':color,
+ 'font-size.rem':fontsizerem,
+ 'width.rem':widthrem,
+ 'border-radius':'3rem',
+ }" (click)="onclick.emit()">
+    {{text}}
+</button>
+</div>
